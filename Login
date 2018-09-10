@@ -1,0 +1,39 @@
+package com.javacodegeeks.android.loginapp;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.support.v .app.ActionBarActivity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+public class MainActivity extends ActionBarActivity {
+    private EditText username;
+    private EditText password;
+    private Button login;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        setupVariables();
+    }
+    public void authenticateLogin(View view) {
+        if (username.getText().toString().equals("admin") && 
+                password.getText().toString().equals("admin")) {
+            Toast.makeText(getApplicationContext(), "Hello admin!", 
+            Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(getApplicationContext(), "Seems like you 're not admin!", 
+                    Toast.LENGTH_SHORT).show();
+     
+            }
+        }
+    }
+    private void setupVariables() {
+        username = (EditText) findViewById(R.id.usernameET);
+        password = (EditText) findViewById(R.id.passwordET);
+        login = (Button) findViewById(R.id.loginBtn);
+        
+}
+}
